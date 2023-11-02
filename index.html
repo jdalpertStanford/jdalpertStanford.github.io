@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Header Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">       
+  </head>
+  <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+
+    .top-nav {
+        display: flex;
+        justify-content: space-between;
+
+        background-color: darkslategray;
+        color: white;
+        height: 60px;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .nav-items {
+        display: none;
+    }
+
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-logo, .nav-entry {
+        text-decoration: none;
+        color: white;
+    }
+
+    .nav-logo:hover, .nav-entry:hover {
+        color: orange;
+        transition-property: color;
+    }
+
+    .nav-button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    #nav-items-mobile {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 60px;
+        background-color: slategrey;
+
+        flex-direction: column;
+
+        height: 0;
+        overflow: hidden;
+        display: flex;
+        transition-property: height;
+        transition-duration: 0.5s;
+    }
+
+    #nav-button-input:checked ~ #nav-items-mobile {
+        height: 120px;
+    }
+
+    #nav-items-mobile .nav-entry {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    @media (min-width: 901px) {
+        .nav-items {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-button, .nav-button-icon {
+            display: none;
+        }
+
+        #nav-items-mobile {
+            display: none !important;
+        }
+    }
+  </style>
+  <body>
+    <header class="top-nav">
+        <a class="nav-logo" href="./index.html">My Website</a>
+        <nav class="nav-items">
+            <a class="nav-entry" href="./index.html">Home</a>
+            <a class="nav-entry" href="./about.html">About</a>
+        </nav>
+        <input class="nav-button" id="nav-button-input" type="checkbox">
+        <label class="nav-button-icon" for="nav-button-input">
+            <span class="fa fa-bars"></span>
+        </label>
+        <nav id="nav-items-mobile">
+            <a class="nav-entry" href="./index.html">Home</a>
+            <a class="nav-entry" href="./about.html">About</a>
+        </nav>
+    </header>
+    <main style="height: 2000px">
+        <h1>Header</h1>
+        <h1>Content</h1>
+    </main>
+    <footer>Footer</footer>
+  </body>
+</html>
